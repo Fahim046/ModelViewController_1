@@ -1,0 +1,21 @@
+﻿@model MvcAss_1.Models.GuessGame
+@{
+    ViewBag.Title = "GuessingGame";
+}
+
+<h2>GuessingGame</h2>
+
+<form method="post">
+    Enter Number<input type="number" name="a" value="">
+
+    <input type="submit" value="Submit">
+</form>
+
+@if (Model.st1 != null)
+{
+
+
+<h3>@Model.st1</h3>
+
+
+}

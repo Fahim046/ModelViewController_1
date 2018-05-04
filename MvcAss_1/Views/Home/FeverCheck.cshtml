@@ -1,0 +1,19 @@
+﻿@model MvcAss_1.Models.FeverCheck
+@{
+    ViewBag.Title = "FeverCheck";
+}
+
+<h2>FeverCheck</h2>
+
+
+@*<form action="/Home/FeverCheck/" method="post">*@
+
+<form method="post">
+    Enter Temperature<input type="text" name="tem" value="">
+
+<input type="submit" value="Submit">
+</form>
+
+@*<h3>@ViewBag</h3>*@
+
+<h3>@Model.st</h3>
