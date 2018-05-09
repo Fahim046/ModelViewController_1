@@ -44,6 +44,16 @@ namespace MvcAss_1
                url: "Home/index/{id}",
                defaults: new { controller = "Home", action = "GuessingGame", id = UrlParameter.Optional }
            );
+            routes.MapRoute(
+              name: "PeopleList",
+              url: "Home/index/{id}",
+              defaults: new { controller = "Home", action = "PeopleList", id = UrlParameter.Optional }
+          );
+            routes.MapRoute(
+             name: "Create",
+             url: "Home/index/{id}",
+             defaults: new { controller = "Home", action = "Create", id = UrlParameter.Optional }
+         );
         }
     }
 }

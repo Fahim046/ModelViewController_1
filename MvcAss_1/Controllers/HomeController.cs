@@ -1,8 +1,10 @@
-﻿using System;
+﻿using MvcAss_1.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+
 
 namespace MvcAss_1.Controllers
 {
@@ -93,5 +95,49 @@ namespace MvcAss_1.Controllers
             return View(guess);
         }
 
+        public ActionResult PeopleList()
+        {
+            return View(People.DbPeople);
+        }
+
+        [HttpGet]
+        public ActionResult Create()
+        {
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Create(People people)
+        {
+            if (ModelState.IsValid)
+            {
+
+                People.DbPeople.Add(people);
+                return RedirectToAction("Index");
+
+            }
+            else
+            {
+                return View(people);
+            }
+        }
+            
+        
+        [HttpPost]
+        public ActionResult Search(string nam, string cnam )
+        {
+            if ()
+            {
+
+            }
+            
+
+            return View();
+        }
+
     }
+
+   
+
 }
