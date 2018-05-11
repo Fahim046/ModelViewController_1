@@ -89,9 +89,7 @@ namespace MvcAss_1.Controllers
                 guess.st1 = "Guess the right number....";
 
             }
-            
-            
-                       
+                               
             return View(guess);
         }
 
@@ -121,19 +119,33 @@ namespace MvcAss_1.Controllers
             {
                 return View(people);
             }
+
         }
             
-        
+         
         [HttpPost]
-        public ActionResult Search(string nam, string cnam )
+        public ActionResult Search(string Name, string City )
         {
-            if ()
+            //var peoples = from s in People.DbPeople select s;
+
+            if (String.IsNullOrEmpty(Name) && String.IsNullOrEmpty(City))
             {
-
+                return RedirectToAction("PeopleList");
             }
-            
 
+            if (!String.IsNullOrEmpty(Name))
+            {
+                return View("PeopleList",People.DbPeople.Where(s => s.Name.Contains(Name)));
+            }
+                  
+            if (!String.IsNullOrEmpty(City))
+            {
+                return View("PeopleList",People.DbPeople.Where(s => s.City.Contains(City)));
+            }
+
+            
             return View();
+                
         }
 
     }

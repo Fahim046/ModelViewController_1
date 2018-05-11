@@ -5,12 +5,19 @@
     @Html.ActionLink("CreateNew", "Create")
 </p>
 
-<form method="post">
-     Name<input type="text" name="nam" value="">
-    CityName<input type="text" name="cnam" value="">
 
-    <input type="submit" value="Search">
-</form>
+
+@*@using (Html.BeginForm(actionName, controllerName))*@
+@using (Html.BeginForm("Search", "Home"))
+{
+    <p>
+        Name: @Html.TextBox("Name")
+        City: @Html.TextBox("City")
+        <input type="submit" value="Find" />
+    </p>
+}
+
+
 
 
 
