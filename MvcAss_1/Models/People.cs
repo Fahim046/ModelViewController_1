@@ -29,7 +29,7 @@ namespace MvcAss_1.Models
             new People() { Name = "Shakeel", City = "Karlshamn", PhoneNumber = "0707046474" },
         };
 
-        public static List<People> BU_DbPeople = new List<People>(DbPeople);
+        
 
         public People()
         {

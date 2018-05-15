@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -146,6 +147,17 @@ namespace MvcAss_1.Controllers
             
             return View();
                 
+        }
+
+
+        // POST: /Delete/
+       
+        public ActionResult Delete(int id)
+        {
+            People people = People.DbPeople.SingleOrDefault(s => s.Id==id);
+            People.DbPeople.Remove(people);
+            
+            return RedirectToAction("PeopleList");
         }
 
     }
