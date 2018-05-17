@@ -54,6 +54,11 @@ namespace MvcAss_1
              url: "Home/index/{id}",
              defaults: new { controller = "Home", action = "Create", id = UrlParameter.Optional }
          );
+              routes.MapRoute(
+               name: "Partial_PeopleList",
+               url: "Home/index/{id}",
+               defaults: new { controller = "Home", action = "Partial_PeopleList", id = UrlParameter.Optional }
+           );
         }
     }
 }

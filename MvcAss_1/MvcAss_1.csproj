@@ -130,6 +130,8 @@
     <Content Include="Views\Home\GuessingGame.cshtml" />
     <Content Include="Views\Home\PeopleList.cshtml" />
     <Content Include="Views\Home\Create.cshtml" />
+    <Content Include="Views\Shared\_partialView.cshtml" />
+    <Content Include="Views\Home\Partial_PeopleList.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -139,6 +141,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Partial\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

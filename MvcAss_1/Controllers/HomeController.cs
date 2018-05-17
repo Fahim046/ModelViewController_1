@@ -94,10 +94,14 @@ namespace MvcAss_1.Controllers
             return View(guess);
         }
 
+
+
         public ActionResult PeopleList()
         {
             return View(People.DbPeople);
         }
+
+
 
         [HttpGet]
         public ActionResult Create()
@@ -144,14 +148,10 @@ namespace MvcAss_1.Controllers
                 return View("PeopleList",People.DbPeople.Where(s => s.City.Contains(City)));
             }
 
-            
             return View();
                 
         }
-
-
         // POST: /Delete/
-       
         public ActionResult Delete(int id)
         {
             People people = People.DbPeople.SingleOrDefault(s => s.Id==id);
@@ -160,8 +160,15 @@ namespace MvcAss_1.Controllers
             return RedirectToAction("PeopleList");
         }
 
+
+        public PartialViewResult Partial_PeopleList()
+        {
+            return PartialView("_partialView", People.DbPeople);
+        }
+
+
     }
 
-   
+
 
 }
