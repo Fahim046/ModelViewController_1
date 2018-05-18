@@ -18,16 +18,16 @@ namespace MvcAss_1.Controllers
         }
         public ActionResult About()
         {
-            return View();
+            return View();//return a view with same name as actionmethod, in this case About.cshtml
         }
         public ActionResult Contacts()
         {
-            return View();
+            return View(); //return a view with same name as actionmethod, in this case View.cshtml
         }
 
         public ActionResult Projects()
         {
-            return View();
+            return View(); //return a view with same name as actionmethod, in this case Projects.cshtml
         }
 
         [HttpGet]
@@ -159,11 +159,44 @@ namespace MvcAss_1.Controllers
             
             return RedirectToAction("PeopleList");
         }
+        
+        //public ActionResult GetPartialView()
+        //{
 
+        //    People person = People.DbPeople.SingleOrDefault(i => i.Id == id);
 
-        public PartialViewResult Partial_PeopleList()
+        //    if (person == null)
+        //    {
+        //        // error handelning
+        //    }
+
+        //    return PartialView("_partialView", person);
+        //}
+        public ActionResult Partial_PeopleList()
         {
-            return PartialView("_partialView", People.DbPeople);
+            PartialPerson part = new PartialPerson(People.DbPeople);
+            return View(part);
+        }
+        
+        public ActionResult Partial(int id)
+        {
+            
+            People person = People.DbPeople.SingleOrDefault(i => i.Id == id);
+
+            if (person == null) 
+            {
+                // error handelning
+            }
+
+            return PartialView("_partialView", person);
+
+
+            //return View();     //return a view with same name as actionmethod, in this case Partial_PeopleList.html
+
+
+
+            // return PartialView("_partialView", person);
+            //return PartialView("_partialView", People.DbPeople);
         }
 
 
