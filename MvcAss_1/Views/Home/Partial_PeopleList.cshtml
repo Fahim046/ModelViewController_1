@@ -4,12 +4,11 @@
 @*@{   Html.RenderAction("Partial_PeopleList", "Home");}*@
 
 
-
 <h2>Partial Views Index</h2>
 <table class="table">
 
     <tr class="row">
-        <th class="col-md-4">
+        <th class="col-md-4">          
             @Html.DisplayName("Name")
         </th>
         <th class="col-md-4">
@@ -29,8 +28,8 @@
 
         @foreach(var item in Model.peoples)
         {
-            Html.RenderAction("Partial", new { id = item.Id });
-
+            Html.RenderAction("Partial", new { id = item.Id }); // go to the Controller with action method name = "Partial"
+ 
             //Html.RenderPartial("_partialView", item);
         }
 

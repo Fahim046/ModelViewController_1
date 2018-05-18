@@ -160,18 +160,7 @@ namespace MvcAss_1.Controllers
             return RedirectToAction("PeopleList");
         }
         
-        //public ActionResult GetPartialView()
-        //{
-
-        //    People person = People.DbPeople.SingleOrDefault(i => i.Id == id);
-
-        //    if (person == null)
-        //    {
-        //        // error handelning
-        //    }
-
-        //    return PartialView("_partialView", person);
-        //}
+       
         public ActionResult Partial_PeopleList()
         {
             PartialPerson part = new PartialPerson(People.DbPeople);
@@ -192,10 +181,6 @@ namespace MvcAss_1.Controllers
 
 
             //return View();     //return a view with same name as actionmethod, in this case Partial_PeopleList.html
-
-
-
-            // return PartialView("_partialView", person);
             //return PartialView("_partialView", People.DbPeople);
         }
 
