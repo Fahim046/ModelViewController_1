@@ -59,6 +59,12 @@ namespace MvcAss_1
                url: "Home/index/{id}",
                defaults: new { controller = "Home", action = "Partial_PeopleList", id = UrlParameter.Optional }
            );
+
+            routes.MapRoute(
+             name: "Ajax",
+             url: "Home/index/{id}",
+             defaults: new { controller = "Home", action = "Ajax", id = UrlParameter.Optional }
+         );
         }
     }
 }

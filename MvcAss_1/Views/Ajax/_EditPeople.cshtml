@@ -1,0 +1,44 @@
+﻿@model MvcAss_1.Models.People
+
+
+<div class="row" id="@("PersonId" + Model.Id)">
+
+
+
+    <div class=" col-md-10">
+        @using (Ajax.BeginForm("Save", new AjaxOptions()
+    {
+        UpdateTargetId = "PersonId" + Model.Id,
+        InsertionMode = InsertionMode.ReplaceWith
+    }
+      ))
+    {
+        @Html.HiddenFor(Model => Model.Id)
+        @Html.LabelFor(Model => Model.Name)
+        @Html.EditorFor(Model => Model.Name)
+
+        @Html.LabelFor(Model => Model.City)
+        @Html.EditorFor(Model => Model.City)
+
+        @Html.LabelFor(Model => Model.PhoneNumber)
+        @Html.EditorFor(Model => Model.PhoneNumber)
+
+         <input type="Submit" value="Save" />
+
+     }
+
+ 
+        <div class="col-md-2">
+            @Ajax.ActionLink("", "ListAPeople", new { id = Model.Id },
+                                   new AjaxOptions()
+                                   {
+                                       UpdateTargetId = "PersonId" + Model.Id,
+                                       InsertionMode = InsertionMode.ReplaceWith
+                                   }
+                               )
+        </div>
+
+
+
+
+    </div>

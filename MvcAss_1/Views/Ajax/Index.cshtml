@@ -1,0 +1,35 @@
+﻿@model List<MvcAss_1.Models.People>
+@*@{   Html.RenderAction("Partial_PeopleList", "Home");}*@
+
+
+<table class="table">
+
+    <tr class="row">
+        <th class="col-md-4">
+            @Html.DisplayName("Name")
+        </th>
+        <th class="col-md-4">
+            @Html.DisplayName("City")
+        </th>
+        <th class="col-md-4">
+            @Html.DisplayName("PhoneNumber")
+        </th>
+
+    </tr>
+
+</table>
+
+<div class="row">
+
+    <div>
+
+        @foreach (var item in Model)
+        {
+            Html.RenderAction("ListAPeople", new { id = item.Id }); // go to the Controller with action method name = "Partial"
+
+            //Html.RenderPartial("_partialView", item);
+        }
+
+    </div>
+
+</div> 

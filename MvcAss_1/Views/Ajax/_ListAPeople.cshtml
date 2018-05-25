@@ -1,0 +1,34 @@
+﻿@model MvcAss_1.Models.People
+
+
+ 
+<div class="row" id="@("PersonId" + Model.Id)">
+    <div class="col-md-2">
+        @Model.Name
+    </div>
+    <div class="col-md-2">
+        @Model.City
+    </div>
+    <div class="col-md-2">
+        @Model.PhoneNumber
+    </div>
+    
+    <div class="col-md-2">
+        @Ajax.ActionLink("Edit", "EditPeople", new { id = Model.Id },
+
+                            new AjaxOptions()
+                            {
+                                UpdateTargetId = "PersonId" + Model.Id,
+                                InsertionMode = InsertionMode.ReplaceWith
+                                //InsertionMode = InsertionMode.Replace
+                            }
+                        )
+    </div>
+
+    <div class="col-md-2">
+
+    </div>
+    <div class="col-md-2">
+
+    </div>
+</div>

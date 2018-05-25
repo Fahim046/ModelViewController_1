@@ -164,7 +164,7 @@ namespace MvcAss_1.Controllers
         public ActionResult Partial_PeopleList()
         {
             PartialPerson part = new PartialPerson(People.DbPeople);
-            return View(part);
+            return View(part); 
         }
         
         public ActionResult Partial(int id)
@@ -178,8 +178,6 @@ namespace MvcAss_1.Controllers
             }
 
             return PartialView("_partialView", person);
-
-
             //return View();     //return a view with same name as actionmethod, in this case Partial_PeopleList.html
             //return PartialView("_partialView", People.DbPeople);
         }
