@@ -27,6 +27,15 @@
 
     <div class="col-md-2">
 
+        @Ajax.ActionLink("Delete", "EditPeople", new { id = Model.Id },
+
+                             new AjaxOptions()
+                             {
+                                 UpdateTargetId = "PersonId" + Model.Id,
+                                 
+                        
+                             }
+                         )
     </div>
     <div class="col-md-2">
 

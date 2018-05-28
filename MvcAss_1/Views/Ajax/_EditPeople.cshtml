@@ -1,11 +1,9 @@
 ﻿@model MvcAss_1.Models.People
 
-
 <div class="row" id="@("PersonId" + Model.Id)">
 
-
-
     <div class=" col-md-10">
+
         @using (Ajax.BeginForm("Save", new AjaxOptions()
     {
         UpdateTargetId = "PersonId" + Model.Id,
@@ -29,7 +27,7 @@
 
  
         <div class="col-md-2">
-            @Ajax.ActionLink("", "ListAPeople", new { id = Model.Id },
+            @Ajax.ActionLink("Cancel", "ListAPeople", new { id = Model.Id },
                                    new AjaxOptions()
                                    {
                                        UpdateTargetId = "PersonId" + Model.Id,
@@ -42,3 +40,4 @@
 
 
     </div>
+</div>

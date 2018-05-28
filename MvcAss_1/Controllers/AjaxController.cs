@@ -43,8 +43,21 @@ namespace MvcAss_1.Controllers
                 return new HttpStatusCodeResult(400);
             }
         }
+ 
+       public ActionResult Save(People person)
+        {
 
-       
+            if (person != null)
+            {
+                return PartialView("_ListAPeople", person);
+            }
+
+            else
+            {
+                    return new HttpStatusCodeResult(400);
+                
+            }
+        }
 
 
     }
