@@ -6,7 +6,6 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
-
 namespace MvcAss_1.Controllers
 {
     public class HomeController : Controller
@@ -51,16 +50,14 @@ namespace MvcAss_1.Controllers
                 //ViewBag.message = "you have Fever";
 
                 feverCheck.st = "You have fever";
-             
-
+       
             }
             else
             {
                 //ViewBag.message = "no fever";
                 feverCheck.st = "You don't have fever";
-               
             }
-            return View(feverCheck);
+                return View(feverCheck);
 
         }
 
@@ -101,8 +98,6 @@ namespace MvcAss_1.Controllers
             return View(People.DbPeople);
         }
 
-
-
         [HttpGet]
         public ActionResult Create()
         {
@@ -126,8 +121,7 @@ namespace MvcAss_1.Controllers
             }
 
         }
-            
-         
+          
         [HttpPost]
         public ActionResult Search(string Name, string City )
         {

@@ -59,6 +59,44 @@ namespace MvcAss_1.Controllers
             }
         }
 
+        public ActionResult DeletePeople(People person)
+        {
+            if (person != null)
+            {
+                return Content("");
+            }
+
+            else
+            {
+                return new HttpStatusCodeResult(400);
+            }
+        }
+
+
+
+
+        public ActionResult Search(String Name)
+        {
+
+            var person = from p in People.DbPeople select p;
+
+
+            if (String.IsNullOrEmpty(Name))
+            {
+                return RedirectToAction("ListAPeople");
+            }
+
+            if (!String.IsNullOrEmpty(Name))
+            {
+                person = person.Where(s => s.Name.ToLower().Contains(Name));
+
+                
+            }
+            return PartialView("_search", person.ToList());
+
+      
+        }
+
 
     }
 }

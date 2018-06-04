@@ -142,6 +142,7 @@
     <Content Include="Views\Ajax\Index.cshtml" />
     <Content Include="Views\Ajax\_ListAPeople.cshtml" />
     <Content Include="Views\Ajax\_EditPeople.cshtml" />
+    <Content Include="Views\Ajax\_search.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

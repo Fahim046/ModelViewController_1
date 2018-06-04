@@ -2,17 +2,41 @@
 @*@{   Html.RenderAction("Partial_PeopleList", "Home");}*@
 
 
+@using (Ajax.BeginForm("Search", new AjaxOptions()
+{
+    UpdateTargetId = "search1",
+    InsertionMode = InsertionMode.Replace
+}
+    ))
+{
+    <p> Name: @Html.TextBox("Name")
+        @*City: @Html.TextBox("City")*@
+    <input type="Submit" value="Filter" />
+    </p>
+
+}
+
 <table class="table">
 
     <tr class="row">
-        <th class="col-md-4">
+        <th class="col-md-2">
             @Html.DisplayName("Name")
         </th>
-        <th class="col-md-4">
+        <th class="col-md-2">
             @Html.DisplayName("City")
         </th>
-        <th class="col-md-4">
+        <th class="col-md-2">
             @Html.DisplayName("PhoneNumber")
+        </th>
+
+
+        <th class="col-md-2">
+
+        </th>
+        <th class="col-md-2">
+
+        </th>
+        <th class="col-md-2">
         </th>
 
     </tr>
@@ -21,7 +45,7 @@
 
 <div class="row">
 
-    <div>
+    <div id="search1">
 
         @foreach (var item in Model)
         {
@@ -33,3 +57,5 @@
     </div>
 
 </div> 
+
+

@@ -1,0 +1,18 @@
+﻿@model List<MvcAss_1.Models.People>
+
+<div class="row">
+
+    @foreach (var item in Model)
+    {
+        <div class="row" id="@("personId"+ item.Id)">
+            <div class="col-md-2">
+                @Html.DisplayFor(Model => item.Name)
+            </div>
+
+            <div class="col-md-2">
+                @Html.DisplayFor(Model => item.PhoneNumber)
+            </div>
+        </div>
+    }
+
+</div>

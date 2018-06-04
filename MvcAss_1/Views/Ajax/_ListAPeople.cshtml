@@ -1,6 +1,5 @@
 ﻿@model MvcAss_1.Models.People
 
-
  
 <div class="row" id="@("PersonId" + Model.Id)">
     <div class="col-md-2">
@@ -22,21 +21,22 @@
                                 InsertionMode = InsertionMode.ReplaceWith
                                 //InsertionMode = InsertionMode.Replace
                             }
-                        )
+                        ) 
     </div>
 
     <div class="col-md-2">
 
-        @Ajax.ActionLink("Delete", "EditPeople", new { id = Model.Id },
+        @Ajax.ActionLink("Delete", "DeletePeople", new { id = Model.Id },
 
-                             new AjaxOptions()
-                             {
-                                 UpdateTargetId = "PersonId" + Model.Id,
-                                 
-                        
-                             }
-                         )
+                          new AjaxOptions()
+                          {
+                              UpdateTargetId = "PersonId" + Model.Id,
+                              InsertionMode = InsertionMode.ReplaceWith
+
+                         }
+                     )
     </div>
+
     <div class="col-md-2">
 
     </div>
