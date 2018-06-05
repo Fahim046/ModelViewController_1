@@ -4,7 +4,7 @@
 
 @using (Ajax.BeginForm("Search", new AjaxOptions()
 {
-    UpdateTargetId = "search1",
+    UpdateTargetId = "search1", // Target the List
     InsertionMode = InsertionMode.Replace
 }
     ))
@@ -28,8 +28,7 @@
         <th class="col-md-2">
             @Html.DisplayName("PhoneNumber")
         </th>
-
-
+        
         <th class="col-md-2">
 
         </th>
@@ -43,18 +42,16 @@
 
 </table>
 
-<div class="row">
+<div class="row" id="search1"> 
 
-    <div id="search1">
-
-        @foreach (var item in Model)
+       @foreach (var item in Model)
         {
             Html.RenderAction("ListAPeople", new { id = item.Id }); // go to the Controller with action method name = "Partial"
 
             //Html.RenderPartial("_partialView", item);
         }
 
-    </div>
+    
 
 </div> 
 

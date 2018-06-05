@@ -59,6 +59,7 @@ namespace MvcAss_1.Controllers
             }
         }
 
+
         public ActionResult DeletePeople(People person)
         {
             if (person != null)
@@ -71,9 +72,6 @@ namespace MvcAss_1.Controllers
                 return new HttpStatusCodeResult(400);
             }
         }
-
-
-
 
         public ActionResult Search(String Name)
         {
@@ -88,9 +86,9 @@ namespace MvcAss_1.Controllers
 
             if (!String.IsNullOrEmpty(Name))
             {
-                person = person.Where(s => s.Name.ToLower().Contains(Name));
 
-                
+                person = person.Where(s => s.Name.ToLower().Contains(Name));
+                                
             }
             return PartialView("_search", person.ToList());
 
